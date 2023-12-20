@@ -19,7 +19,7 @@ class LoginMiddleware
         if (Auth::check()) {
             $user = Auth::user();
             
-            if ($user->hasRole('admin')) {
+            if ($user->hasRole('user_manager_rap')) {
                 if ($request->routeIs('auth.index')) {
                     // Nếu là admin và đang truy cập trang đăng nhập, điều hướng đến trang admin
                     return redirect()->route('admin.dashboard');

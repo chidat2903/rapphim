@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\LoginMiddleware;
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Controllers\admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,12 @@ use App\Http\Middleware\CheckAdmin;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//admin
+
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard') ->middleware(CheckAdmin::class);
+
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('auth.index')->middleware(LoginMiddleware::class);
 Route::post('/do_login', [LoginController::class, 'login'])->name('auth.do_login');

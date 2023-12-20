@@ -15,7 +15,7 @@ class LoginController extends Controller
             // Kiểm tra xem người dùng đã đăng nhập hay chưa
             $user = Auth::user();
             
-            if ($user->hasRole('admin')) {
+            if ($user->hasRole('user_manager_rap')) {
                 // Kiểm tra quyền admin
                 return redirect()->route('admin.dashboard'); // Điều hướng đến trang quản trị
             } else {
@@ -35,7 +35,7 @@ class LoginController extends Controller
             // Đăng nhập thành công
             $user = Auth::user();
     
-            if ($user->hasRole('admin')) {
+            if ($user->hasRole('user_manager_rap')) {
                 // Nếu người dùng có quyền admin, điều hướng đến trang quản trị
                 return redirect()->route('admin.dashboard')->with('success', 'Bạn đã đăng nhập thành công');
             } else {
