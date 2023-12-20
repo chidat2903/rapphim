@@ -1,0 +1,516 @@
+body {
+  background-color: #202020;
+  height: auto;
+  color: #e5e5e5;
+  font-style:oblique;
+}
+
+header  {
+    position: absolute ;
+    z-index: 5 ;
+    width: 100% ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.3s ease;
+}
+
+header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); 
+    opacity: 0; 
+    z-index: -1; 
+    transition: opacity 0.3s ease; 
+}
+
+header .navbar-ul li {
+    position: relative; 
+    list-style: none; 
+    padding:  0 ;
+  }
+header .navbar-ul li::after {
+    content: ''; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: transparent; 
+    transform: scaleX(0); 
+    transform-origin: right center; 
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+  }
+header  .navbar-ul li:hover::after {
+    transform: scaleX(1); 
+    background-color: #ffffff; 
+  }
+
+header.active:before {
+    opacity: 1; 
+  }
+
+.dropdown-menu{
+  padding: 0;
+  
+}
+.dropdown-menu li{
+  width: 150px;
+  text-align: center;
+}
+.dropdown-item:hover{
+  background-color: rgba(0, 0, 0, 0.50);
+  
+}
+  
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 1 ;
+    position: relative;
+}
+
+header form {
+    margin-right: 20px;
+}
+
+header .btn-vip {
+    margin-right: 20px ;
+}
+
+/* .carousel-inner {
+    position: relative ;
+} */
+
+
+
+.carousel-caption {
+  top : 20%;
+  left: 60%;
+  display: none;
+  animation: slide-up 1s ease-in-out forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(50px); /* Bắt đầu từ vị trí dưới */
+    opacity: 0; /* Ẩn ban đầu */
+  }
+  to {
+    transform: translateY (0); /* Kết thúc ở vị trí ban đầu */
+    opacity: 1; /* Hiển thị hoàn toàn */
+  }
+}
+
+.carousel-caption .title-carousel-caption {
+  color: #e5e5e5;
+  text-align: left;
+  font-family: Molle;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  font-weight: bold;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+  width: 400px;
+}
+
+.carousel-caption .title-smail-carousel-captison {
+  color: #FFF;
+  font-family: Montaga;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+}
+
+.title-smail-carousel-captison .text-title {
+  color: #FFF;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+  background-color: #ffffff6d;
+  padding: 5px 7px;
+  margin-right: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.top-trending-carousel-caption {
+  margin-top: 25px;
+}
+
+.top-trending-carousel-caption .top-title {
+  background-color: #f43333;
+  color: #FFF;
+  padding: 6px;
+  border-radius: 5px 0 0 5px;
+  
+}
+
+.top-trending-carousel-caption .trending-title {
+  background: rgba(217, 217, 217, 0.80);
+  color: #FFF;
+  padding: 6px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.title-smail-carousel-captison {
+  text-align: left;
+}
+
+.play-round-carousel-captison {
+  text-align: left;
+}
+
+.circular-button {
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  text-align: center; 
+  line-height: 50px; 
+  background-color: #f43333; 
+  color: white;
+  border: none; 
+  cursor: pointer; 
+  margin-top: 20px;
+  font-size: 25px;
+}
+.circular-button-note {
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  text-align: center; 
+  line-height: 50px; 
+  background-color: #BEC1C3; 
+  color: rgb(111, 111, 111);
+  border: none; 
+  cursor: pointer; 
+  margin-top: 20px;
+  font-size: 25px;
+  margin-left: 20px;
+}
+
+.cards {
+  background-color: #202020;
+  position:relative;
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #f43333;
+  font-size: 50px;
+}
+
+.cards:hover .icon-overlay {
+  opacity: 1;
+}
+.cards img {
+  border-radius: 10px;
+}
+
+.cards img:hover {
+  transform: scale(1.1); /* Khi hover vào card, làm toàn bộ card to lớn hơn 10% */
+  transition: transform 0.3s ease; /* Thời gian và kiểu easing của hiệu ứng */
+  border-radius: 10px;
+}
+
+.card-text{
+  margin-top: 10px;
+  color: #030303;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  bottom: 0; 
+  left: 2.5px; 
+  right: 0;
+  padding: 5px; 
+  border-radius: 0 0 5px 5px;
+}
+
+.cards img {
+  width: 100%;
+}
+
+.slider .slider-card {
+  margin: 0 10px;
+  position: relative;
+}
+.slider a{
+  width: 200px;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 0;
+  transform: translateY(-210%);
+  border: none;
+  width: 35px;
+  height: 35px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-right: 10px ;
+}
+
+.slick-arrow:hover{
+  background-color: #BEC1C3;
+}
+
+
+.slick-prev {
+  right: 4%;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-dots {
+  display: flex !important;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,200%);
+  align-items: center;
+  justify-content: center;
+  gap: 0 20px;
+  list-style: none;
+}
+
+.slick-dots button {
+  font-size: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 100rem;
+  background-color: #eee;
+  border: none;
+  outline: 0;
+
+}
+
+.slick-dots .slick-active button {
+  background-color: #f43333;
+}
+
+.content {
+  position:absolute;
+  top: 450px;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+
+ .content-title {
+  margin-bottom: 20px; 
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-title .content-title-big h2 {
+  color: #FFF;
+}
+
+.content-title .content-title-a a {
+  color: #FFF;
+  font-size: 24px;
+  
+}
+
+.contents {
+  margin-top: 50px;
+}
+
+.card-actor {
+  border: none;
+  background-color: #202020;
+}
+
+.card-actor img {
+  border-radius: 50%;
+}
+
+.blog-content-information-text {
+  color: #F00;
+  
+}
+.blog-content-information-text::before,
+.blog-content-information-number::before {
+  content: "|"; /* Ký tự bạn muốn sử dụng cho dấu đứng */
+  margin: 2px 5px;
+  color: #fff; /* Điều chỉnh khoảng cách giữa dấu đứng và chữ */
+}
+
+
+
+.dark-bg-image {
+  position: relative;
+  display: inline-block;
+}
+
+.dark-bg-image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #202020);
+}
+
+.dark-bg-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* //tập phim */
+.halim-episode span div{
+  background-color: #373737;
+  width: 70px;
+  height: 30px;
+  text-align:center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+}
+.halim-episode-ser span div{
+  width: 120px;
+  height: 30px;
+  text-align:center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+
+}
+.zoom {
+  transition: transform 0.2s ease-in-out; /* Hiệu ứng chuyển đổi */
+}
+
+.zoom:hover {
+  transform: scale(1.2); /* Phóng to khi di chuột qua */
+}
+
+.background-image-1{
+  width: 100%;
+  height: 100vh; /* Thiết lập chiều cao cho phần tử */
+  background-image: url('https://media.istockphoto.com/id/1500477334/vi/anh/n%E1%BB%99i-th%E1%BA%A5t-c%E1%BB%A7a-gh%E1%BA%BF-chi%E1%BA%BFu-phim-m%C3%A0u-%C4%91%E1%BB%8F-tho%E1%BA%A3i-m%C3%A1i-tr%E1%BB%91ng-r%E1%BB%97ng-ch%C3%ACa-kh%C3%B3a-th%E1%BA%A5p-t%C3%B4ng-m%C3%A0u-t%E1%BB%91i.jpg?s=2048x2048&w=is&k=20&c=Bde7EieN9tXR63RKaCtWmveg_JzHFvcr939sqUC01uY=');
+  background-size: cover; /* Để hình ảnh vừa khít với kích thước của div */
+  background-position: center; /* Căn chỉnh hình ảnh vào giữa */
+  display: flex; /* Cho phép căn giữa nội dung */
+  justify-content: center; /* Căn nội dung vào giữa */
+  align-items: center; /* Căn nội dung vào giữa */
+  }
+.background-image-1::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(54, 45, 45, 0.671); /* Màu sắc và độ mờ của nền (dùng rgba để chỉnh độ trong suốt) */
+  backdrop-filter: blur(0px); /* Độ mờ của nền, có thể điều chỉnh giá trị px tùy ý */
+}
+
+.background-image-2{
+  width: 100%;
+  height: 100vh; /* Thiết lập chiều cao cho phần tử */
+  background-image: url('https://media.istockphoto.com/id/1500477334/vi/anh/n%E1%BB%99i-th%E1%BA%A5t-c%E1%BB%A7a-gh%E1%BA%BF-chi%E1%BA%BFu-phim-m%C3%A0u-%C4%91%E1%BB%8F-tho%E1%BA%A3i-m%C3%A1i-tr%E1%BB%91ng-r%E1%BB%97ng-ch%C3%ACa-kh%C3%B3a-th%E1%BA%A5p-t%C3%B4ng-m%C3%A0u-t%E1%BB%91i.jpg?s=2048x2048&w=is&k=20&c=Bde7EieN9tXR63RKaCtWmveg_JzHFvcr939sqUC01uY=');
+  background-size: cover; /* Để hình ảnh vừa khít với kích thước của div */
+  background-position: center; /* Căn chỉnh hình ảnh vào giữa */
+  display: flex; /* Cho phép căn giữa nội dung */
+  justify-content: center; /* Căn nội dung vào giữa */
+  align-items: center; /* Căn nội dung vào giữa */
+  }
+.background-image-2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(54, 45, 45, 0.671); /* Màu sắc và độ mờ của nền (dùng rgba để chỉnh độ trong suốt) */
+  backdrop-filter: blur(0px); /* Độ mờ của nền, có thể điều chỉnh giá trị px tùy ý */
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 8px 0 rgba(254, 254, 254, 0.692); /* Thay đổi giá trị để điều chỉnh bóng */
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(183, 183, 183, 0.566); /* Tạo shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Tạo transition khi hover */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Phóng to khi hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow lớn hơn khi hover */
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card-content {
+  text-align: center;
+}
+
+/* Căn giữa nội dung của card */
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card-1 {
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s; /* Thêm transition cho box-shadow */
+}
+
+.card-1:hover {
+  box-shadow: 0 8px 16px rgba(155, 155, 155, 0.372); /* Shadow mở rộng hơn khi hover */
+}
+
+.card-1 img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.card-1 h3 {
+  margin: 10px 0;
+}
+
+.card-1 p {
+  margin: 0;
+}
