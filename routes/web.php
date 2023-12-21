@@ -8,6 +8,8 @@ use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\LoginMiddleware;
 use App\Http\Middleware\CheckAdmin;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\RapController;
+use App\Http\Controllers\admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +44,7 @@ Route::get('/thongtinve', [PageController::class, 'getthongtinve'])->middleware(
 Route::get('/rapphim', [PageController::class, 'getrapphim'])->middleware(AuthMiddleware::class)->name('pages.rapphim');;
 Route::get('/trangchu', [PageController::class, 'getTrangchu'])->middleware(AuthMiddleware::class)->name('pages.trangchu1');
 Route::get('/phim', [PageController::class, 'getPhim'])->middleware(AuthMiddleware::class)->name('pages.phim');
+
+//admin
+Route::resource('/admin/rap', RapController::class)->middleware(CheckAdmin::class);
+Route::resource('/admin/san_pham', ProductController::class)->middleware(CheckAdmin::class);
