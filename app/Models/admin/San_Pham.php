@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class San_Pham extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     protected $table = 'san_pham';
 
     protected $fillable = [
@@ -18,4 +18,8 @@ class San_Pham extends Model
         'type',
         'image'
     ];
+
+    public function rap () {
+        return $this->belongsTo(Rap::class,'rap_id');
+    }
 }

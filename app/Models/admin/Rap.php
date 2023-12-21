@@ -11,4 +11,5 @@ class Rap extends Model
 
     public $timestamps = false;
 
+    
 }

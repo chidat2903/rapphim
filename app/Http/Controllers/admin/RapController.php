@@ -82,7 +82,7 @@ class RapController extends Controller
         $get_image1 = $request ->file('image');
         if($get_image1) {
             if (!empty ($rap->image)) {
-                unlink('uploads/movie/imagebig/'.$rap->image);
+                unlink('uploads/rap/'.$rap->image);
             }
             $get_name_image = $get_image1->getClientOriginalName(); //lấy tên hình ảnh vd như hinhanh1.jpg
             $name_image = current(explode('.',$get_name_image)); //tách dấu chấm ra để làm chuõi vd như [0]hinhanh1 . [1]jpg
@@ -100,8 +100,8 @@ class RapController extends Controller
     public function destroy(string $id)
     {
         $rap = Rap::find($id);
-        if(file_exists('uploads/movie/'.$rap->image)){
-            unlink('uploads/movie/'.$rap->image);
+        if(file_exists('uploads/rap/'.$rap->image)){
+            unlink('uploads/rap/'.$rap->image);
         }
         $rap->delete();
         return redirect()->back()->with('success', 'Bạn đã xóa thành công');;
